@@ -1,0 +1,180 @@
+:root {
+    --bg-color: hsl(233, 47%, 7%);
+    --card-color: hsl(244, 38%, 16%);
+    --acent-color: hsl(277, 64%, 61%);
+    --white1: hsl(0, 0%, 100%);
+    --white2: hsla(0, 0%, 100%, 0.75);
+    --white3: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 20rem;
+    overflow-x: hidden;
+}
+
+.container-card {
+    background: var(--card-color);
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 8px;
+}
+
+.header-image {
+    position: relative;
+    display: inline-block;
+}
+.overlay {
+    content: '';
+    background: hsla(277, 64%, 61%, 0.6);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header-mobile {
+    display: none;
+    border-radius: 6px;
+    z-index: 1;
+}
+.header-desktop {
+    border-radius: 6px;
+    height: 100%;
+    display: block;
+    z-index: 1;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
+    padding-right: 6.6rem;
+    padding-bottom: 3rem;
+    height: 100%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    color: var(--white1);
+    margin-bottom: 2rem;
+}
+.violet-text {
+    color: var(--acent-color);
+}
+.desc {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    color: var(--white2);
+    width: 80%;
+    line-height: 1.67em;
+}
+
+.data-container {
+    display: flex;
+}
+
+.data-box {
+    padding: 20px;
+}
+
+.data-number {
+    font-family: 'Inter', sans-serif;
+    color: var(--white1);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+.data-title {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--white3);
+    font-size: 0.8rem;
+}
+
+.attribution {
+    font-family: sans-serif;
+    margin-top: 10rem;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .container-card{
+        flex-direction: column;
+    }
+    .header-mobile {
+        display: block;
+        border-radius: 6px;
+        z-index: 1;
+        width: 100%;
+    }
+    .header-desktop {
+        display: none;
+    }
+
+    .bg{
+        padding: 10rem 3rem;
+        justify-content: start;
+    }
+
+    .info-container{
+        padding: 2rem 1.8rem;
+        padding-top: 4rem;
+    }
+
+    .title, .desc{ 
+        text-align: center;
+        width: 100%;
+    }
+
+    .title{
+        font-size: 2.4rem;
+    }
+    .desc{
+        font-size: 1.4rem;
+        padding: 0 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .data-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-box{
+        text-align: center;
+    }
+
+    .data-number{
+        font-size: 2rem;
+    }
+
+    .data-title{
+        font-size: 1.1rem;
+    }
+
+}
