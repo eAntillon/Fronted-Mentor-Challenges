@@ -1,6 +1,6 @@
 import { Flex, Stack, Text, Button } from '@chakra-ui/react';
 import React from 'react';
-const TotalPanel = ({tip, total}) => {
+const TotalPanel = ({tip, total, reset}) => {
     return (
         <Flex direction="column" justifyContent="space-between" w="100%" h="100%" >
             <Flex direction="column">
@@ -45,6 +45,7 @@ const TotalPanel = ({tip, total}) => {
                     color="cyan.800"
                     _hover={{ bg: 'cyan.250' }}
                     marginTop={[14, null]}
+                    onClick={reset}
                 >
                     RESET
                 </Button>

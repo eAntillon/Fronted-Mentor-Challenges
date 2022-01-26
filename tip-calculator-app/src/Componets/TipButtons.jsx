@@ -5,10 +5,13 @@ const TipButtons = ({ tip, setTip }) => {
     const [selected, setselected] = useState('');
 
     useEffect(() => {
-        setTip(custom);
+        if (custom != '') {
+            setTip(custom);
+        }
     }, [custom]);
 
     const handleClick = ({ target }) => {
+        setcustom('');
         if (selected == parseInt(target.innerText)) {
             setTip('');
             setselected('');
@@ -16,7 +19,6 @@ const TipButtons = ({ tip, setTip }) => {
             setTip(parseInt(target.innerText));
             setselected(parseInt(target.innerText));
         }
-        setcustom('');
     };
 
     const buttons = [5, 10, 15, 25, 50].map((i, k) => {
@@ -34,12 +36,12 @@ const TipButtons = ({ tip, setTip }) => {
     });
 
     const handleChange = ({ target }) => {
+        setselected('');
         if (target.value == '') {
             setcustom('');
         } else {
             setcustom(parseFloat(target.value));
         }
-        setselected('');
     };
 
     return (

@@ -26,7 +26,9 @@ const Calculator = () => {
     }, [bill, people, tip]);
 
     const reset = () => {
-        
+        setbill('')
+        setpeople('')
+        setTip('')
     }
 
     return (
@@ -51,6 +53,7 @@ const Calculator = () => {
                     fontSize="24px"
                     letterSpacing="0.6rem"
                     color="cyan.800"
+                    marginTop={[10,0]}
                 >
                     <Text textAlign="center">SPLI</Text>
                     <Text textAlign="center">TTER</Text>
@@ -61,6 +64,8 @@ const Calculator = () => {
                     height="100%"
                     direction={{ base: 'column', md: 'row' }}
                     borderRadius={24}
+                    borderTopRadius={24}
+                        borderBottomRadius={[0,null,24]}
                     padding={8}
                     spacing={8}
                 >
@@ -84,7 +89,7 @@ const Calculator = () => {
                         borderRadius={16}
                         padding={8}
                     >
-                        <TotalPanel tip={totalTip} total={total} />
+                        <TotalPanel tip={totalTip} total={total} reset={reset} />
                     </Box>
                 </Stack>
             </Stack>
