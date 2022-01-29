@@ -29,7 +29,7 @@ const InfoCard = ({ data }: props) => {
                             orientation="vertical"
                             h="100%"
                             borderColor="hsl(0, 0%, 79%)"
-                            role="hr"
+                            role="separator"
                         />
                     </Flex>
                 )}
