@@ -53,7 +53,6 @@ const IpTracker: FC = () => {
             <Box bg="red.400" width="100%" h="100%">
                 <MapContainer
                     center={data.position}
-                    zoom={22}
                     scrollWheelZoom={true}
                     id="mapid"
                     zoomControl={false}
