@@ -47,8 +47,9 @@ const InputIp = ({ ip, setIp, handleClick}: props) => {
                         paddingY={7}
                         _hover={{ bg: 'hsl(0, 0%, 17%)' }}
                         onClick={(e) => handleClick(e)}
+                        aria-label="Submit"
                     >
-                        <Image src={iconArrow} />
+                        <Image src={iconArrow} alt="icon-arrow"/>
                     </Button>
                 }
                 padding={0}

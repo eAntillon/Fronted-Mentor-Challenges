@@ -35,7 +35,6 @@ const useFetch = (ip: string) => {
         if (ip != '') {
             axios.get(url).then((res) => {
                 setLoading(false);
-                console.log(res);
                 setData({
                     ip: res.data.ip,
                     location: `${res.data.city}, ${res.data.district}`,
