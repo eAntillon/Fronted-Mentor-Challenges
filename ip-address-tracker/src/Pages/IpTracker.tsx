@@ -6,6 +6,7 @@ import InfoCard from '../Components/InfoCard';
 import useFetch, { dataObject } from '../Hooks/useFetch';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import './IpTracker.css';
+import ChangeView from '../Components/ChangeView';
 
 const IpTracker: FC = () => {
     const [ip, setIp] = useState<string>('');
@@ -57,6 +58,7 @@ const IpTracker: FC = () => {
                     id="mapid"
                     zoomControl={false}
                 >
+                    <ChangeView center={data.position} />
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
