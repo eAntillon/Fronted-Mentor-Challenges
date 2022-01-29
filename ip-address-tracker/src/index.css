@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
