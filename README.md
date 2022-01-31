@@ -1,3 +1,3 @@
 # Fronted-Mentor-Challenges
-Repository for all my submition of frontend mentor challenges
+Repository for all my frontend mentor challenge submissions.
 
