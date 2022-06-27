@@ -6,23 +6,24 @@ export const Countries = createContext(null);
 
 const CountriesProvider = ({ children }) => {
     const [countries, setCountries] = useState([]);
-    const [region, setRegion] = useState('');
+    const [region, setRegion] = useState('all');
     const [isLoading, setisLoading] = useState(true);
     useEffect(() => {
-        (async () => {
-            console.log('getting countries');
+        const getCountries = async () => {
             setisLoading(true);
+            console.log('fetching countries');
             const resp = await axios({
                 method: 'get',
-                url: 'https://restcountries.com/v2/all?fields=name,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flag',
+                url: 'https://restcountries.com/v2/all?fields=name,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flag,alpha3Code,nativeName',
             });
             if (resp.status != 200) {
                 console.error('error getting countries');
-                setCountries([]);
+                return [];
             }
             setCountries(resp.data);
             setisLoading(false);
-        })();
+        };
+        getCountries();
     }, []);
 
     return (

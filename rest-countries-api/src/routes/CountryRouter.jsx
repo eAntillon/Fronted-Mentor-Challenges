@@ -1,11 +1,11 @@
 import Router from 'preact-router';
-import CountriesGrid from '../components/country/CountriesGrid';
+import Home from '../pages/Home';
 import CountryDetail from '../components/country/CountryDetail';
 
 const CountryRouter = () => {
     return (
         <Router>
-            <CountriesGrid path="/" />
+            <Home path="/" />
             <CountryDetail path="/detail/:countryCode" />
             {/* <Search path="/search/:query/:advanced?" /> */}
         </Router>
