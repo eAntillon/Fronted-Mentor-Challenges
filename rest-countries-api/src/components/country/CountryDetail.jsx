@@ -37,9 +37,9 @@ const CountryDetail = ({ countryCode }) => {
                     </button>
                 </Link>
             </div>
-            <div className="flex flex-col md:grid md:grid-cols-2 md:gap-24 h-[calc(100%-4rem)] ">
+            <div className="flex flex-col md:grid md:grid-cols-2 md:gap-24 h-[calc(100%-4rem)] md:items-start">
                 <div
-                    className="h-96 md:h-9/12 md:mr-1 w-full bg-center bg-contain md:bg-cover bg-no-repeat"
+                    className="h-96 md:mr-1 w-full bg-center bg-contain  bg-no-repeat"
                     style={{ backgroundImage: `url(${country.flag})` }}
                 ></div>
                 <DetailedInfo

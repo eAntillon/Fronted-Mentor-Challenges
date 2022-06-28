@@ -1,4 +1,4 @@
-const SearchBar = ({ regions, setRegion, searchText, setSearchText }) => {
+const SearchBar = ({ regions, region, setRegion, searchText, setSearchText }) => {
     const handleChangeText = (e) => {
         setSearchText(e.target.value);
     };
@@ -8,8 +8,8 @@ const SearchBar = ({ regions, setRegion, searchText, setSearchText }) => {
     };
 
     return (
-        <div className="py-6 flex flex-row justify-between">
-            <div className="bg-white px-6 py-3 rounded-lg text-DarkGray shadow-md w-1/3 dark:bg-DarkBlue transition-all duration-400">
+        <div className="py-6 flex flex-col md:flex-row justify-between">
+            <div className="bg-white px-6 py-3 rounded-lg text-DarkGray shadow-md mb-4 md:mb-0 md:w-1/3 dark:bg-DarkBlue transition-all duration-400">
                 <i className="fa-solid fa-magnifying-glass mr-4 dark:text-gray-300"></i>
                 <input
                     type="text"
@@ -20,18 +20,18 @@ const SearchBar = ({ regions, setRegion, searchText, setSearchText }) => {
                     onInput={handleChangeText}
                 />
             </div>
-            <div className="flex items-center px-2 py-1 bg-white rounded-lg shadow-md dark:bg-DarkBlue transition-all duration-400">
+            <div className="flex w-3/5 md:w-auto items-center px-2 py-1 bg-white rounded-lg shadow-md dark:bg-DarkBlue transition-all duration-400">
                 <select
                     name="regionSelected"
-                    className="p-3 dark:bg-DarkBlue transition-all duration-400 outline-0 dark:text-white dark:placeholder-gray-300"
+                    className="w-full p-3 dark:bg-DarkBlue transition-all duration-400 outline-0 dark:text-white dark:placeholder-gray-300"
                     onChange={handleSelect}
                 >
-                    <option selected disabled>
+                    <option  selected={region === "all"} disabled>
                         Filter by Region
                     </option>
-                    <option value="all">All</option>
+                    <option value="all" >All</option>
                     {regions.map((i) => (
-                        <option value={i}>{i}</option>
+                        <option value={i} selected={region === i}>{i}</option>
                     ))}
                 </select>
             </div>
